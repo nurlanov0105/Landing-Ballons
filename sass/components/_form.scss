@@ -1,0 +1,256 @@
+.book {
+   padding: 5rem;
+   background: linear-gradient(
+         110deg,
+         rgba(255, 255, 255, 0.9) 0%,
+         rgba(255, 255, 255, 0.9) 57%,
+         rgba(186, 133, 84, 0.8) 57%,
+         rgba(161, 79, 3, 0.8) 100%
+      ),
+      url("../img/form/bg-form.jpg") center / cover no-repeat;
+   height: 50rem;
+   border-radius: 0.5rem;
+   overflow: hidden;
+
+   @media (min-resolution: 192dpi) and (min-width: 1140px),
+      (min-width: 1140px) {
+      background: linear-gradient(
+            110deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.9) 57%,
+            rgba(186, 133, 84, 0.8) 57%,
+            rgba(161, 79, 3, 0.8) 100%
+         ),
+         url("../img/form/bg-form-big.jpg") center / cover no-repeat;
+   }
+
+   @include respond(tab-port) {
+      padding: 4rem;
+      background: linear-gradient(
+            110deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.9) 507%,
+            rgba(186, 133, 84, 0.8) 57%,
+            rgba(161, 79, 3, 0.8) 100%
+         ),
+         url("../img/form/bg-form.jpg") center / cover no-repeat;
+   }
+
+   .title-secondary {
+      @include respond(tab-port) {
+         text-align: center;
+      }
+   }
+
+   &__form {
+   }
+}
+
+.form {
+   width: 70%;
+
+   @include respond(tab-port) {
+      width: 100%;
+   }
+
+   & > .margin-bottom-30px {
+      @include respond(tab-land) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__group {
+      position: relative;
+
+      @include respond(tab-land) {
+         &:nth-child(2) {
+            margin-bottom: 5rem;
+         }
+      }
+   }
+
+   &__group:not(:last-child) {
+      margin-bottom: 5rem;
+
+      @include respond(tab-land) {
+         margin-bottom: 4.3rem;
+      }
+   }
+
+   &__group:nth-child(4) {
+      margin-bottom: 3rem;
+
+      @include respond(tab-land) {
+         margin-bottom: 3rem;
+      }
+
+      @include respond(tab-port) {
+         margin-top: 1rem;
+      }
+   }
+
+   &__input {
+      padding: 1.8rem 2.2rem;
+
+      width: 55%;
+      background-color: $color-white;
+      border: none;
+      border-bottom: 0.2rem solid transparent;
+      border-radius: 0.3rem;
+      box-shadow: 0 0.4rem 0.4rem rgba($color-black, 0.1);
+
+      font-weight: 400;
+      font-size: $font-size-paragraph;
+      letter-spacing: 0.2rem;
+      color: $color-black;
+
+      transition: $transition-all;
+
+      &:focus {
+         outline: none;
+         border-bottom: 0.2rem solid #66d763;
+      }
+
+      &:focus:invalid {
+         border-bottom: 0.2rem solid #d76363;
+      }
+
+      @include respond(tab-port) {
+         width: 90%;
+         box-shadow: $box-shadow;
+      }
+   }
+
+   &__input:placeholder-shown + &__label {
+      opacity: 0;
+      transform: translateY(80%);
+   }
+
+   &__label {
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      opacity: 1;
+
+      transform: translateY(100%);
+
+      margin-top: 1rem;
+      margin-left: 1.5rem;
+
+      font-weight: 400;
+      font-size: $font-size-paragraph;
+      letter-spacing: 0.2rem;
+      transition: $transition-all;
+   }
+
+   &__group-radio {
+      display: inline-block;
+
+      &:not(:last-child) {
+         margin-right: 2rem;
+      }
+
+      @include respond(tab-land) {
+         display: block;
+
+         &:not(:last-child) {
+            margin-bottom: 2rem;
+         }
+      }
+   }
+
+   &__input-radio {
+      display: none;
+   }
+
+   &__label-radio {
+      position: relative;
+      padding-left: 4rem;
+      font-weight: 400;
+      font-size: $font-size-paragraph;
+      letter-spacing: 0.2rem;
+      cursor: pointer;
+   }
+
+   &__custom-radio {
+      position: absolute;
+      top: -0.5rem;
+      left: 0;
+      display: inline-block;
+
+      width: 3rem;
+      height: 3rem;
+      border: 0.4rem solid $color-brown-light;
+      border-radius: 100%;
+
+      &::after {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+
+         width: 1.4rem;
+         height: 1.4rem;
+         background-color: $color-brown-light;
+         border-radius: 100%;
+
+         opacity: 0;
+         transition: $transition-all;
+      }
+   }
+   &__input-radio:checked ~ &__label-radio > &__custom-radio::after {
+      opacity: 1;
+   }
+
+   &__btn {
+      position: relative;
+      padding: 1.5rem 2.1rem;
+
+      background-color: $color-brown-light;
+      border-radius: 50px;
+      border: none;
+
+      font-weight: 600;
+      font-size: 2rem;
+      letter-spacing: 0.5rem;
+      color: $color-white;
+      cursor: pointer;
+
+      transition: $transition-all;
+      text-transform: uppercase;
+
+      &:hover {
+         transform: translateY(-0.4rem);
+         box-shadow: $box-shadow;
+
+         &::after {
+            opacity: 0;
+            transform: scaleX(1.6) scaleY(1.7);
+         }
+      }
+      &:active {
+         transform: translateY(-0.2rem);
+         box-shadow: (0 0.4rem 0.4rem rgba(0, 0, 0, 0.1));
+      }
+      &::after {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         display: inline-block;
+         background-color: $color-brown-light;
+         width: 100%;
+         height: 100%;
+         border-radius: 5rem;
+         z-index: -1;
+
+         transition: all 0.3s;
+      }
+
+      @include respond(tab-land) {
+         padding: 1.2rem 1.5rem;
+         font-size: 1.8rem;
+      }
+   }
+}

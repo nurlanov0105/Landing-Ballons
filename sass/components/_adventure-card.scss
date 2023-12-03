@@ -1,0 +1,28 @@
+.adventure-card {
+   padding: 2.5rem 2.5rem 2.9rem;
+   background: rgba(255, 255, 255, 0.8);
+   border-radius: 0.5rem;
+   box-shadow: $box-shadow;
+   text-align: center;
+   transition: $transition-all;
+
+   &:hover {
+      transform: translateY(-1rem) scale(1.05);
+   }
+
+   &__icon {
+      display: inline-block;
+      font-size: 6rem;
+      background: linear-gradient(
+         90deg,
+         $color-brown-light 3.65%,
+         $color-brown-dark 100%
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+   }
+}
+.icon-Vector01 {
+}
+.title-third {
+}

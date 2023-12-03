@@ -1,0 +1,67 @@
+.footer {
+   padding: 8rem 0;
+   background-color: #333333;
+   color: $color-white;
+
+   &__logo {
+      display: block;
+      margin-bottom: 5rem;
+      text-align: center;
+
+      img {
+         display: inline-block;
+
+         @media (max-width: 390px) {
+            width: 20rem;
+         }
+      }
+   }
+
+   &__list {
+      text-align: center;
+   }
+
+   &__item {
+      text-transform: uppercase;
+      display: inline-block;
+      font-weight: 300;
+      font-size: $font-size-paragraph;
+      letter-spacing: 0.2rem;
+      transition: transform 0.2s ease-out;
+
+      &:not(:last-child) {
+         margin-right: 5rem;
+
+         @include respond(tab-land) {
+            margin-right: 1.6rem;
+         }
+
+         @include respond(tab-port) {
+            margin-right: 0;
+         }
+      }
+
+      @include respond(tab-port) {
+         margin: 0;
+         padding: 2rem;
+      }
+
+      a {
+         color: inherit;
+         text-decoration-color: transparent;
+         transition: $transition-all;
+         &:hover,
+         :focus {
+            text-decoration: underline;
+         }
+         &:active {
+            text-decoration: underline;
+         }
+      }
+
+      &:hover {
+         transform: rotate(5deg) scale(1.2);
+         color: $color-brown-light;
+      }
+   }
+}

@@ -1,0 +1,205 @@
+.tour-card {
+   position: relative;
+   height: 52rem;
+   perspective: 150rem;
+   -moz-perspective: 150rem;
+
+   @media only screen and (max-width: 900px), (hover: none) {
+      height: auto;
+   }
+
+   &__img {
+      height: 24.5rem;
+      background-blend-mode: hard-light;
+      background: $color-brown-light url("../img/tours/01.jpg") center / cover
+         no-repeat;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 77%);
+
+      @media (min-resolution: 192dpi) and (min-width: 512px),
+         (min-width: 1340px) {
+         background: $color-brown-light url("../img/tours/01-3.jpg") center /
+            cover no-repeat;
+      }
+
+      &-2 {
+         background: $color-brown-light url("../img/tours/02.jpg") center /
+            cover no-repeat;
+         @media (min-resolution: 192dpi) and (min-width: 512px),
+            (min-width: 1340px) {
+            background: $color-brown-light url("../img/tours/02-3.jpg") center /
+               cover no-repeat;
+         }
+      }
+      &-3 {
+         background: $color-brown-light url("../img/tours/03.jpg") center /
+            cover no-repeat;
+         @media (min-resolution: 192dpi) and (min-width: 512px),
+            (min-width: 1340px) {
+            background: $color-brown-light url("../img/tours/03-3.jpg") center /
+               cover no-repeat;
+         }
+      }
+   }
+
+   &__title {
+      position: absolute;
+      top: 18.3rem;
+      right: 0;
+
+      font-weight: 300;
+      font-size: 2.8rem;
+      letter-spacing: 0.2rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-align: right;
+
+      @include respond(tab-port) {
+         top: 17.3rem;
+         font-size: 3.8rem;
+      }
+   }
+
+   &__span {
+      padding: 1rem 1.5rem;
+      background: linear-gradient(
+         90deg,
+         $color-brown-light 3.65%,
+         $color-brown-dark 100%
+      );
+      &--1 {
+         padding-bottom: 0.4rem;
+      }
+      &--2 {
+         position: absolute;
+         top: 3.7rem;
+         right: 0;
+         padding-top: 0.4rem;
+      }
+   }
+
+   &__descr {
+      margin: 0 auto;
+      margin-top: 4.5rem;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 0.2rem;
+      font-size: $font-size-paragraph;
+      color: $color-gray;
+      list-style-type: none;
+
+      li {
+         display: inline-block;
+         border-bottom: 1px solid $color-gray;
+
+         &:not(:last-child) {
+            margin-bottom: 2rem;
+         }
+
+         @include respond(tab-land) {
+            font-size: 1.5rem;
+         }
+
+         @include respond(tab-port) {
+            font-size: 2rem;
+         }
+      }
+
+      @include respond(tab-port) {
+         margin-top: 3rem;
+         max-width: 30rem;
+      }
+   }
+
+   &__side {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      height: 52rem;
+      width: 100%;
+      transition: 0.7s ease-out;
+      color: #fff;
+      backface-visibility: hidden;
+      box-shadow: 0 0.4rem 0.4rem rgba($color-black, 0.1);
+      border-radius: 0.3rem;
+      overflow: hidden;
+
+      &--front {
+         background-color: rgb(255, 255, 255);
+         @media only screen and (max-width: 900px), (hover: none) {
+            padding-bottom: 13rem;
+         }
+      }
+      &--back {
+         background: linear-gradient(
+            156.85deg,
+            $color-brown-light 3.65%,
+            $color-brown-dark 100%
+         );
+         transform: rotateY(180deg);
+
+         @media only screen and (max-width: 900px), (hover: none) {
+            transform: rotateY(0);
+            clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+            margin-top: -10rem;
+         }
+      }
+
+      @media only screen and (max-width: 900px), (hover: none) {
+         height: auto;
+         position: relative;
+      }
+   }
+
+   &__back-side {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @media only screen and (max-width: 900px), (hover: none) {
+         position: relative;
+         top: 0%;
+         left: 0%;
+         transform: translate(0%, 0%);
+         padding: 10rem 5rem 5rem 5rem;
+         text-align: center;
+      }
+   }
+
+   &__back-text {
+      color: #ffffff;
+      letter-spacing: 0.2rem;
+      text-align: center;
+      margin-bottom: 8.7rem;
+      text-transform: uppercase;
+
+      @include respond(tab-port) {
+         margin-bottom: 3rem;
+      }
+   }
+
+   &__back-text--title {
+      font-weight: 300;
+      font-size: $font-size-paragraph;
+   }
+
+   &__back-text--cost {
+      font-weight: 500;
+      font-size: 6rem;
+   }
+
+   .btn {
+   }
+
+   &:hover &__side--front {
+      transform: rotateY(-180deg);
+
+      @media only screen and (max-width: 900px), (hover: none) {
+         transform: rotateY(0deg);
+      }
+   }
+   &:hover &__side--back {
+      transform: rotateY(0deg);
+   }
+}

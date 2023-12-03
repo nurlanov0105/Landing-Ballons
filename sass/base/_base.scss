@@ -1,0 +1,31 @@
+html {
+   font-size: 62.5%;
+
+   @include respond(tab-land) {
+      font-size: 56.25%;
+   }
+   @include respond(tab-port) {
+      font-size: 50%;
+   }
+   @include respond(phone) {
+      font-size: 30%;
+   }
+   @include respond(big-screen) {
+      font-size: 75%;
+   }
+}
+body {
+   font-family: "Roboto", sans-serif;
+   font-weight: 400;
+   color: $color-gray;
+   font-size: $font-size-paragraph;
+   letter-spacing: 0.2rem;
+   padding: 5rem;
+   background-color: $color-white;
+}
+.container {
+   position: relative;
+   background-color: #f7f7f7;
+   z-index: 0;
+   overflow-x: hidden;
+}

@@ -1,0 +1,14 @@
+.tour {
+   padding-top: 14rem;
+   padding-bottom: 8.5rem;
+
+   @include respond(tab-port) {
+      & > .text-align-center {
+         margin-top: -5rem;
+      }
+   }
+
+   @include respond(tab-port) {
+      padding-bottom: 6rem;
+   }
+}

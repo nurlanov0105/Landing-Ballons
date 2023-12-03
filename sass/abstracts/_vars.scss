@@ -1,0 +1,32 @@
+// Цвета текста
+$color-gray: #777777;
+
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-light: #fafafa;
+
+$color-brown-light: #ba8554;
+$color-brown-dark: #a14f03;
+
+// Ширина float колонки
+$grid-width: 114rem;
+
+// Отступы
+$margin-vertical-big: 8rem;
+$margin-horizontal: 6rem;
+
+// Transition - плавность
+$transition-all: all 0.3s ease-out;
+
+// Тень для боксов
+$box-shadow: (0 0.4rem 0.4rem rgba(0, 0, 0, 0.3));
+
+// Тень для заголвков H2
+$shadow-h2: 0rem 0.4rem 0.4rem rgba($color-black, 0.25%);
+
+$font-size-h1: 5rem;
+$font-size-h2: 3.6rem;
+$font-size-h3: 2rem;
+
+// Типографика
+$font-size-paragraph: 1.6rem;
